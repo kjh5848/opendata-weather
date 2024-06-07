@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // JUnit for testing
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+
+    // Apache POI for Excel handling
+    implementation 'org.apache.poi:poi:5.2.3'
+    implementation 'org.apache.poi:poi-ooxml:5.2.3'
+    implementation 'org.apache.poi:poi-ooxml-schemas:4.1.2'
+    implementation 'org.apache.xmlbeans:xmlbeans:5.1.1'
+
+    // MySQL Connector for database handling
+    implementation 'mysql:mysql-connector-java:8.0.33'
+    implementation 'org.yaml:snakeyaml:2.1'
+    implementation 'com.google.code.gson:gson:2.8.9'
+}
+
+tasks.test {
+    useJUnitPlatform()
+}
